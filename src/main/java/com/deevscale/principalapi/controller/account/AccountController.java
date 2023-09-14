@@ -2,9 +2,9 @@ package com.deevscale.principalapi.controller.account;
 
 import com.deevscale.principalapi.entity.account.Account;
 import com.deevscale.principalapi.mapper.account.AccountMapper;
-import com.deevscale.principalapi.models.request.AccountRequest;
-import com.deevscale.principalapi.models.response.AccountResponse;
 import com.deevscale.principalapi.service.account.AccountService;
+import com.deevscale.principalmodel.api.request.AccountRequest;
+import com.deevscale.principalmodel.api.response.AccountResponse;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.validation.annotation.Validated;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Validated
-public class AccountController{
+public class AccountController {
 
     private final AccountService accountService;
     private final AccountMapper accountMapper;

@@ -1,8 +1,8 @@
 package com.deevscale.principalapi.service.account;
 
 import com.deevscale.principalapi.entity.account.Account;
-import com.deevscale.principalapi.models.request.AccountRequest;
 import com.deevscale.principalapi.repository.account.AccountRepository;
+import com.deevscale.principalmodel.api.request.AccountRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,6 +10,7 @@ public class AccountService {
 
     private final AccountRepository accountRepository;
     private final AccountSecurityService accountSecurityService;
+
     public AccountService(
             AccountRepository accountRepository,
             AccountSecurityService accountSecurityService
