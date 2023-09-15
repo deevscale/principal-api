@@ -11,8 +11,8 @@ public class AccountMapper implements ResponseMapper<AccountResponse, Account> {
     @Override
     public AccountResponse mapToResponse(Account account) {
         return AccountResponse.builder()
-                .id(account.id())
-                .username(account.username())
+                .id(account.getId())
+                .username(account.getUsername())
                 .build();
     }
 }
