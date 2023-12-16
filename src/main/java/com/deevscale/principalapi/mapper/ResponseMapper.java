@@ -1,7 +1,16 @@
 package com.deevscale.principalapi.mapper;
 
-public interface ResponseMapper<T,Y> {
+import com.deevscale.principalapi.entity.BaseEntity;
 
-    T mapToResponse(Y entity);
+import java.util.UUID;
+
+public abstract class ResponseMapper<T, E> {
+
+    public abstract T mapToResponse(E entity);
+
+
+    public UUID mapToId(BaseEntity entity) {
+        return entity.getId();
+    }
 
 }

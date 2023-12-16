@@ -6,13 +6,12 @@ import com.deevscale.principalmodel.api.response.AccountResponse;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AccountMapper implements ResponseMapper<AccountResponse, Account> {
+public class AccountMapper extends ResponseMapper<AccountResponse, Account> {
 
     @Override
     public AccountResponse mapToResponse(Account account) {
         return AccountResponse.builder()
                 .id(account.getId())
-                .username(account.getUsername())
                 .build();
     }
 }

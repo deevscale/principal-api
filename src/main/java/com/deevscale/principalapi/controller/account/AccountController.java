@@ -3,13 +3,14 @@ package com.deevscale.principalapi.controller.account;
 import com.deevscale.principalapi.entity.account.Account;
 import com.deevscale.principalapi.mapper.account.AccountMapper;
 import com.deevscale.principalapi.service.account.AccountService;
-import com.deevscale.principalmodel.api.request.AccountRequest;
-import com.deevscale.principalmodel.api.response.AccountResponse;
+import com.deevscale.principalmodel.api.request.account.NewAccountRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.UUID;
 
 @RestController
 @Validated
@@ -28,9 +29,9 @@ public class AccountController {
 
 
     @PostMapping
-    public ResponseEntity<AccountResponse> addNew(@RequestBody AccountRequest accountRequest) {
-        Account account = accountService.addNew(accountRequest);
-        return ResponseEntity.ok(accountMapper.mapToResponse(account));
+    public ResponseEntity<UUID> addNew(@RequestBody NewAccountRequest newAccountRequest) {
+        Account account = accountService.addNew(newAccountRequest);
+        return ResponseEntity.ok(accountMapper.mapToId(account));
     }
 
 
